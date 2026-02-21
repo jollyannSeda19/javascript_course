@@ -1,0 +1,14 @@
+/* Center the game on screen */
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #111;
+}
+
+/* Canvas styling */
+canvas {
+  background: #222;
+  border: 2px solid #444;
+}
