@@ -30,7 +30,7 @@ function updateObstacles() {
 
   // Remove off-screen obstacles
   obstacles = obstacles.filter(o => o.x + o.width > 0);
-  
+
 }
 
 /* Draw obstacles */
@@ -46,9 +46,3 @@ function drawObstacles() {
     ctx.fillRect(o.x, bottomY, o.width, canvas.height - bottomY);
   });
 }
-
-// Add to update():
-updateObstacles();
-
-// Add to draw():
-drawObstacles();
