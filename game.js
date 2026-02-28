@@ -19,6 +19,7 @@ const GRAVITY = 0.5;   // pulls player down
 const FLAP = -9;       // upward boost
 
 loop();
+console.log
 
 /* ---------- Update ---------- */
 function update() {
@@ -56,8 +57,16 @@ function loop() {
 
 /* ---------- Controls ---------- */
 window.addEventListener("keydown", (e) => {
-  if (e.code === "Space") {
-    e.preventDefault();
-    player.velocityY = FLAP;
-  }
+  // if (e.code === "Space") {
+  //   e.preventDefault();
+  //   player.velocityY = FLAP;
+  // }
+  let greeting ="";
+  let time=21;
+// if (time < 20) { //false
+//   greeting = "Good day";
+// } else if (time < 21) { //false
+//   greeting = "Good evening"
+// }
+  greeting = (time < 20) ? "Good day" : "Good evening";
 });
