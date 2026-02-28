@@ -5,3 +5,10 @@ function showDate()  {
 function hideDate() {
     document.getElementById('demo').innerHTML="";
 }
+
+function mouseEnter() {
+    let gameCanvas = document.getElementById('game');
+    gameCanvas.addEventListener("mouseenter", function() {
+        document.getElementById('demo').innerHTML="mouseIn";
+    });
+}
