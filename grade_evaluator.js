@@ -28,6 +28,22 @@ const students = [{
 
 function evaulateGrade() {
     console.log(students);
+      for (let i = 0; i < students.length; i++) {
+    let letter;
+
+    if (students[i].grade >= 90) {
+      letter = "A";
+    } else if (students[i].grade >= 80) {
+      letter = "B";
+    } else if (students[i].grade >= 70) {
+      letter = "C";
+    } else {
+      letter = "F";
+    }
+
+    console.log(students[i].name + " got a " + letter);
+  }
+
 }
 
 evaulateGrade();
