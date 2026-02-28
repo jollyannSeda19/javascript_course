@@ -25,6 +25,9 @@ const students = [{
     grade: 75
 }];
 
+
 function evaulateGrade() {
     console.log(students);
 }
+
+evaulateGrade();
