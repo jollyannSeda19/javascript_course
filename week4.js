@@ -30,6 +30,7 @@ function updateObstacles() {
 
   // Remove off-screen obstacles
   obstacles = obstacles.filter(o => o.x + o.width > 0);
+  
 }
 
 /* Draw obstacles */
