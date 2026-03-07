@@ -16,7 +16,7 @@ const player = {
 
 /* ---------- Physics ---------- */
 const GRAVITY = 0.5;   // pulls player down
-const FLAP = -9;       // upward boost
+const FLAP = -5;       // upward boost
 
 loop();
 console.log

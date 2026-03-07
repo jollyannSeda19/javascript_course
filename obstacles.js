@@ -47,7 +47,7 @@ function drawObstacles() {
   });
 }
 
-const scoreElmt = document.getElementById('score').textContent="";
+const scoreElmt = document.getElementById('score');
 
 let score = 0;
 
