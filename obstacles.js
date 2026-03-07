@@ -48,16 +48,48 @@ function drawObstacles() {
     ctx.fillRect(o.x, bottomY, o.width, canvas.height - bottomY);
   });
   obstacles.forEach(o => {
-  if (!o.passed && o.x + o.width < player.x) {
+  if (!o.passed && o.x + o.width < player.x && player.y + player.height > o.topHeight && player.y < o.topHeight + o.gap) {
     o.passed = true;
     score++;
     scoreElmt.textContent = score;
   }
+
+  const topPipe = {
+    x: o.x,
+    y: 0,
+    width: o.width,
+    height: o.topHeight
+  };
+
+  const bottomPipe = {
+    x: o.x,
+    y: o.topHeight + o.gap,
+    width: o.width,
+    height: canvas.height
+  };
+
+  if (
+    isColliding(player, topPipe) ||
+    isColliding(player, bottomPipe)
+  ) {
+    gameState = "gameover";
+    scoreElmt.textContent = gameState;
+  }
+
 });
 
 }
 
 const scoreElmt = document.getElementById('score');
 
+let gameState = "start"; // start | playing | gameover
 
+function isColliding(a, b) {
 
+  return (
+    a.x < b.x + b.width &&
+    a.x + a.width > b.x &&
+    a.y < b.y + b.height &&
+    a.y + a.height > b.y
+  );
+}
