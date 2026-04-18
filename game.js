@@ -6,7 +6,7 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 /* ---------- Player ---------- */
-const player = {
+var player = {
   x: 150,
   y: 200,
   width: 30,
@@ -14,10 +14,11 @@ const player = {
   velocityY: 0
 };
 
+
 /* ---------- Physics ---------- */
 const GRAVITY = 0.5;   // pulls player down
 const FLAP = -9;       // upward boost
-
+init(); 
 drawStartUpScreen("Press Space to Start", "Use Space to Flap and Avoid Pipes");
 
 function drawStartUpScreen(gamestatus, text) {

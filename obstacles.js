@@ -7,6 +7,8 @@ let gap = 200; // space between top and bottom pipes
 let score = 0;
 let newScore = 0;
 let coins = [];
+let lives = 3;
+let isInvisible = false;
 
 function init() {
   spawnTimer = 0;
@@ -15,6 +17,8 @@ function init() {
   gap = 200; // space between top and bottom pipes
   score = 0;
   newScore = 0;
+  lives = 3;
+  livesElmt.innerHTML = '&#9829;'.repeat(lives);
 }
 /* Create a new obstacle */
 function spawnObstacle() {
@@ -112,11 +116,21 @@ function drawObstacles() {
       height: canvas.height
     };
 
-    if (isColliding(player, topPipe) ||
-      isColliding(player, bottomPipe)) {
-      gameState = "gameover";
+    if ((isColliding(player, topPipe) ||
+      isColliding(player, bottomPipe)) && !isInvisible) {
+      lives--;
+      isInvisible = true;
+      livesElmt.innerHTML = '&#9829;'.repeat(lives);
+      setTimeout(() => {
+        isInvisible = false;
+      }, 2000);
     }
 
+    if (lives <= 0) {
+        gameState = "gameover";
+
+    }
+    
     if (newScore != score) {
       if (score > 0 && score % 5 === 0) {
         scrollSpeed += 0.3;
@@ -142,7 +156,8 @@ function drawObstacles() {
 }
 
 
-const scoreElmt = document.getElementById('score');
+var scoreElmt = document.getElementById('score');
+var livesElmt = document.getElementById('lives');
 
 let gameState = "start"; // start | playing | gameover
 
