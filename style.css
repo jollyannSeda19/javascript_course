@@ -1,6 +1,6 @@
 /* Center the game on screen */
 body {
-  background-color: #222;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +12,19 @@ body {
 
 #score-container {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
+  width: 800px;
   margin-bottom: 20px;
+}
+
+#score-container > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#score-container > div h1 {
+  margin: 0;
 }
 
 #game {
@@ -24,4 +35,10 @@ body {
 canvas {
   background: #222;
   border: 2px solid #444;
+}
+
+#lives {
+  color: red;
+  font-size: 24px;
+  margin-left: 20px;
 }
