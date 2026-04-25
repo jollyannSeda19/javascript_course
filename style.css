@@ -1,6 +1,6 @@
 /* Center the game on screen */
 body {
-  background-color: white;
+  background-color: yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
